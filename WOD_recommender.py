@@ -75,3 +75,8 @@ if col1.button("Recommend"):
 
 # "Powered by GEMINI" text in the second (narrower) column
 col2.markdown("<div style='padding-top: 5px;'>Powered by GEMINI</div>", unsafe_allow_html=True)
+
+st.markdown(
+    "<div style='position: fixed; bottom: 30px; right: 30px;'>Created by dykwak94</div>",
+    unsafe_allow_html=True
+)
