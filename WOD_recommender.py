@@ -63,7 +63,7 @@ workout_type = st.selectbox(
 )
 
 # Create two columns for the button and the "Powered by GEMINI" text
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([3.8, 1])
 
 # Recommendation button in the first (wider) column
 if col1.button("Recommend"):
@@ -77,6 +77,6 @@ if col1.button("Recommend"):
 col2.markdown("<div style='padding-top: 5px;'>Powered by GEMINI</div>", unsafe_allow_html=True)
 
 st.markdown(
-    "<div style='position: fixed; bottom: 30px; right: 30px;'>Created by dykwak94</div>",
+    "<div style='position: fixed; bottom: 30px; right: 30px;'>Created by @road_to_1000lb</div>",
     unsafe_allow_html=True
 )
