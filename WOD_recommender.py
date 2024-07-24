@@ -13,7 +13,7 @@ def get_recommendations(pain_parts, target_parts, workout_type):
     Target body parts: {', '.join(target_parts)}
     Workout type: {workout_type}
 
-    Please provide 4-5 exercises, including the name of the exercise, number of sets, and number of reps for each.
+    Provide 4-5 exercises, including the name of the exercise, number of sets, and number of reps, recommended resting time for each.
     Format your response as follows:
 
     1. [Exercise Name]: [Sets] x [Reps]
@@ -52,16 +52,22 @@ workout_type = st.selectbox(
     ["hypertrophy", "strength", "interval"]
 )
 
-# Recommendation button
-if st.button("Recommend"):
-    with st.spinner("Generating your WOD..."):
+# Create two columns for the button and the "Powered by GEMINI" text
+col1, col2 = st.columns([3, 1])
+
+# Recommendation button in the first (wider) column
+if col1.button("Recommend"):
+    with st.spinner("Generating recommendations..."):
         recommendations = get_recommendations(pain_parts, target_parts, workout_type)
     
     st.subheader("Recommended Workout of the Day:")
     st.text(recommendations)
 
+# "Powered by GEMINI" text in the second (narrower) column
+col2.markdown("<div style='padding-top: 5px;'>Powered by GEMINI</div>", unsafe_allow_html=True)
+
 # Powered by GEMINI text
 st.markdown(
-    "<div style='position: fixed; bottom: 20px; right: 25px;'>Powered by GEMINI</div>",
+    "<div style='position: fixed; bottom: 20px; right: 25px;'>Created by NMDA</div>",
     unsafe_allow_html=True
 )
