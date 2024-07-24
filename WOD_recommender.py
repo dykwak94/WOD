@@ -42,7 +42,7 @@ def add_bg_from_url(image_url):
 # Streamlit UI
 add_bg_from_url('https://cdn.pixabay.com/photo/2014/11/17/13/17/crossfit-534615_1280.jpg')
 
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([3.8, 1])
 
 # Title in the first (wider) column
 col1.title("WOD Recommender")
