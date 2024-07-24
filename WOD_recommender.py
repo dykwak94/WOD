@@ -1,5 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
+from PIL import Image
+import requests
+from io import BytesIO
 
 # Configure the Gemini API
 genai.configure(api_key='AIzaSyCvJ1kAUwogUcM1PgTt6E5-92zbdLLLyJk')
@@ -32,6 +35,8 @@ def get_recommendations(pain_parts, target_parts, workout_type):
         return f"Error: {str(e)}"
 
 # Streamlit UI
+add_bg_from_url('https://cdn.pixabay.com/photo/2014/11/17/13/17/crossfit-534615_1280.jpg')
+
 st.title("WOD Recommender")
 
 # Multi-select for pain/disabled areas
