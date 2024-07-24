@@ -85,7 +85,14 @@ if col1.button("Recommend"):
 # "Powered by GEMINI" text in the second (narrower) column
 col2.markdown("<div style='padding-top: 5px;'>Powered by GEMINI</div>", unsafe_allow_html=True)
 
-st.markdown(
-    "<div style='position: fixed; bottom: 30px; right: 30px;'>Created by @road_to_1000lb</div>",
+# Add some vertical space
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Create a container for the footer
+footer = st.container()
+
+# Add the "Created by" text to the footer
+footer.markdown(
+    "<div style='text-align: center; color: grey; padding: 10px;'>Created by @road_to_1000lb</div>",
     unsafe_allow_html=True
 )
