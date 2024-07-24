@@ -16,7 +16,7 @@ def get_recommendations(pain_parts, target_parts, workout_type):
     Target body parts: {', '.join(target_parts)}
     Workout type: {workout_type}
 
-    Provide 4-5 exercises, including the name of the exercise, number of sets, and number of reps, recommended resting time for each.
+    Please provide 4-5 exercises, including the name of the exercise, number of sets, and number of reps for each.
     Format your response as follows:
 
     1. [Exercise Name]: [Sets] x [Reps]
@@ -33,6 +33,11 @@ def get_recommendations(pain_parts, target_parts, workout_type):
         return response.text if response.text else "No recommendations available."
     except Exception as e:
         return f"Error: {str(e)}"
+    
+def add_bg_from_url(image_url):
+    response = requests.get(image_url)
+    img = Image.open(BytesIO(response.content))
+    st.image(img, use_column_width=True)
 
 # Streamlit UI
 add_bg_from_url('https://cdn.pixabay.com/photo/2014/11/17/13/17/crossfit-534615_1280.jpg')
@@ -70,9 +75,3 @@ if col1.button("Recommend"):
 
 # "Powered by GEMINI" text in the second (narrower) column
 col2.markdown("<div style='padding-top: 5px;'>Powered by GEMINI</div>", unsafe_allow_html=True)
-
-# Powered by GEMINI text
-st.markdown(
-    "<div style='position: fixed; bottom: 20px; right: 25px;'>Created by NMDA</div>",
-    unsafe_allow_html=True
-)
