@@ -42,16 +42,12 @@ def add_bg_from_url(image_url):
 # Streamlit UI
 add_bg_from_url('https://cdn.pixabay.com/photo/2014/11/17/13/17/crossfit-534615_1280.jpg')
 
-col1, col2 = st.columns([4, 2])
 
 # Title in the first (wider) column
-col1.title("WOD Recommender")
+st.title("WOD Recommender")
 
 # Creator text in the second (narrower) column
-col2.markdown(
-    "<div style='padding-top: 20px;'>Created by @road_to_1000lb</div>",
-    unsafe_allow_html=True
-)
+
 
 # Multi-select for pain/disabled areas
 pain_parts = st.multiselect(
