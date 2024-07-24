@@ -72,7 +72,7 @@ workout_type = st.selectbox(
 )
 
 # Create two columns for the button and the "Powered by GEMINI" text
-col1, col2 = st.columns([3.8, 1])
+col1, col2 = st.columns([4, 2])
 
 # Recommendation button in the first (wider) column
 if col1.button("Recommend"):
