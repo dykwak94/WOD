@@ -5,7 +5,7 @@ import requests
 from io import BytesIO
 
 # Configure the Gemini API
-genai.configure(api_key='AIzaSyCvJ1kAUwogUcM1PgTt6E5-92zbdLLLyJk')
+genai.configure(api_key='relu')
 
 def get_recommendations(pain_parts, target_parts, workout_type):
     model = genai.GenerativeModel('gemini-pro')
